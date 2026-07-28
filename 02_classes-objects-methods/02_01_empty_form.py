@@ -10,3 +10,13 @@
 #
 # Model such an application form as a Python class below, and instantiate
 # a few objects from it.
+
+class Form:
+  """Creates a form object."""
+  def __init__(self, first_name, last_name, email):
+    self.first_name = first_name
+    self.last_name = last_name
+    self.email = email
+
+f1 = Form("John", "Doe", "john@doe.com")
+f2 = Form("Anna", "Franklin", "anna.franklin@example.com")
