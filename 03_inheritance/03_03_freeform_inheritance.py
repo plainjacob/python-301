@@ -12,3 +12,22 @@
 #
 # - A `Vehicle()` parent class, with `Truck()` and `Motorcycle()` child classes.
 # - A `Restaurant()` parent class, with `Gourmet()` and `FastFood()` child classes.
+
+class Vehicle:
+  def __init__(self, wheels, weight):
+    self.wheels = wheels
+    self.weight = weight
+
+class Truck(Vehicle):
+  def __init__(self, wheels, weight, trailer):
+    super().__init__(wheels, weight)
+    self.trailer = trailer
+
+class Motorcycle(Vehicle):
+  def __init__(self, weight):
+    self.weight = weight
+    self.wheels = 2
+
+car = Vehicle(4, 1500)
+truck = Truck(6, 3000, False)
+motor = Motorcycle(500)
