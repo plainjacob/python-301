@@ -7,3 +7,12 @@
 # appear in Studio Ghibli films.
 
 BASE_URL = "https://ghibliapi-iansedano.vercel.app"
+
+import requests
+
+response = requests.get(f"{BASE_URL}/api/species")
+data = response.json()
+species = data["data"]["species"]
+
+cat = [species for species in species if species['name'] == 'Cat']
+print(cat)

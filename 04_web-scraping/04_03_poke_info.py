@@ -12,3 +12,21 @@
 # Check out the guides they provide: https://pokeapi-how.appspot.com/page5
 
 BASE_URL = "https://pokeapi.co/api/v2/"
+
+import requests
+
+favorite_pokemon = ["pikachu", "bulbasaur", "mudkip", "ditto", "diglett", "geodude"]
+
+pokemon_info = []
+for pokemon in favorite_pokemon:
+  response = requests.get(f"{BASE_URL}pokemon/{pokemon}")
+  data = response.json()
+
+  pokemon_info.append({
+    "name": data["name"],
+    "id": data["id"],
+    "types": [type["type"]["name"] for type in data["types"]]
+
+  })
+
+print(pokemon_info)
