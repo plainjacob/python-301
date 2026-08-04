@@ -13,3 +13,23 @@
 #    should NEVER terminate with a Traceback.
 #     a) Which exception can you expect to encounter? Why?
 #     b) How do you catch it to avoid the program from terminating with a traceback?
+
+
+from pathlib import Path
+# open war and peace
+with open("05_exceptions/books/war_and_peace.txt", "r") as file:
+  content = file.readlines()
+
+# open crime and punishment
+with open("05_exceptions/books/crime_and_punishment.txt", "w") as file:
+  file.write("")
+
+# loop over files
+global_path = Path("./05_exceptions/books")
+files = global_path.glob("*.txt")
+for file in files:
+  with open(file, "r") as f:
+    first_line = f.readline()
+    if len(first_line) > 0:
+      first_char = first_line[0]
+      print(first_char)

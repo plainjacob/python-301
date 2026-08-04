@@ -2,3 +2,12 @@
 # validity of the input type, and displays a message depending on whether
 # the input was an integer or not.
 # The script should keep prompting the user until they enter an integer.
+ 
+while True:
+  try:
+    number = int(input("Number: "))
+  except ValueError:
+    print("Input a number. Try again.")
+    continue
+  else:
+    break
