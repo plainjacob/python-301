@@ -10,3 +10,21 @@
 # Keep in mind that you will run into an error when you'll attempt to import
 # this file, because Python modules can't begin with a number.
 # You can rename the file to make it work :)
+
+import unittest
+
+def sum(num1, num2):
+  return num1 + num2
+
+class Test(unittest.TestCase):
+  def test_sum1(self):
+    self.assertEqual(sum(1, 1), 2)
+
+  def test_not_sum(self):
+    self.assertNotEqual(sum(1, 1), 3)
+
+  def test_sum2(self):
+    self.assertEqual(sum(1, 1), 3)
+
+if __name__ == "__main__":
+  unittest.main()
